@@ -13,17 +13,12 @@ pipeline {
 		stage ('Test') {
 			steps {
 				bat 'mvn clean -Dthreads=2 verify'
-				junit '**/target/surefire-reports/TEST-*.xml'
-			}
-		}
-		stage ('Package') {
-			steps {
-				bat 'mvn package'
+				junit '**/target/failsafe-reports/TEST-*.xml'
 			}
 		}
 		stage ('Archive') {
 			steps {
-				archiveArtifacts artifacts: 'target/surefire-reports/*.*', onlyIfSuccessful: true, fingerprint: true
+				archiveArtifacts artifacts: 'target/extent-reports/Extent Report_*.html', onlyIfSuccessful: false, fingerprint: true
 			}
 		}
 	}
