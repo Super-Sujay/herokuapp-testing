@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.automation.project.test</groupId>
+	<artifactId>herokuapp-testing</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<name>Heroku App Testing</name>
+	<properties>
+		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<!-- Dependency versions -->
+		<framework.version>1.0.0</framework.version>
+		<!-- Configurable variables -->
+		<suiteFile>TestExecution</suiteFile>
+		<threads>1</threads>
+		<browser>chrome</browser>
+		<overwrite.binaries>false</overwrite.binaries>
+		<remote>false</remote>
+		<seleniumGridURL></seleniumGridURL>
+		<platform></platform>
+		<browserVersion></browserVersion>
+		<proxyEnabled>false</proxyEnabled>
+		<proxyHost></proxyHost>
+		<proxyPort></proxyPort>
+	</properties>
+	<dependencies>
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.automation.project</groupId>
+			<artifactId>advance-selenium-framework</artifactId>
+			<version>${framework.version}</version>
+		</dependency>
+	</dependencies>
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>3.0.0-M4</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>${project.basedir}/src/test/resources/suitefiles/${suiteFile}.xml</suiteXmlFile>
+					</suiteXmlFiles>
+					<parallel>tests</parallel>
+					<threadCount>${threads}</threadCount>
+					<systemProperties>
+						<browser>${browser}</browser>
+						<remoteDriver>${remote}</remoteDriver>
+						<gridURL>${seleniumGridURL}</gridURL>
+						<desiredPlatform>${platform}</desiredPlatform>
+						<desiredBrowserVersion>${browserVersion}</desiredBrowserVersion>
+						<proxyEnabled>${proxyEnabled}</proxyEnabled>
+						<proxyHost>${proxyHost}</proxyHost>
+						<proxyPort>${proxyPort}</proxyPort>
+					</systemProperties>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+</project>
