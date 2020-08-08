@@ -1,11 +1,13 @@
 package com.herokuapp.pages;
 
 import org.automation.base.BasePage;
+import org.automation.elements.Elements;
 import org.automation.elements.HyperLink;
 import static org.openqa.selenium.By.cssSelector;
 
 public class DisappearingElementsPage extends BasePage {
 
+	public Elements menuItems = new Elements("Menu Items", cssSelector("li > a"));
 	public HyperLink home = new HyperLink("Home", cssSelector("li:nth-child(1) > a"));
 	public HyperLink about = new HyperLink("About", cssSelector("li:nth-child(2) > a"));
 	public HyperLink contactUs = new HyperLink("Contact Us", cssSelector("li:nth-child(3) > a"));
