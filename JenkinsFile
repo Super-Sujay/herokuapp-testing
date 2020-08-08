@@ -13,7 +13,7 @@ pipeline {
 		}
 		stage ('Archive') {
 			steps {
-				archiveArtifacts artifacts: 'target/extent-reports/Extent Report_*.html', onlyIfSuccessful: false, fingerprint: true
+				archiveArtifacts artifacts: 'target/selenium-logs/*.log', onlyIfSuccessful: false, fingerprint: true
 			}
 		}
 	}
