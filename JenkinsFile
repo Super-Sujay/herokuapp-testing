@@ -5,11 +5,6 @@ pipeline {
 		jdk 'Java 8'
 	}
 	stages {
-		stage ('Checkout') {
-			steps {
-				git 'https://github.com/Super-Sujay/herokuapp-testing.git'
-			}
-		}
 		stage ('Test') {
 			steps {
 				bat 'mvn clean -Dthreads=2 verify'
