@@ -1,13 +1,12 @@
 package com.herokuapp.pages;
 
-import static org.openqa.selenium.By.id;
-
 import org.automation.base.BasePage;
 import org.automation.elements.Element;
+import org.openqa.selenium.By;
 
 public class DragDropPage extends BasePage {
 
-	public Element boxA = new Element("Box A", id("column-a"));
-	public Element boxB = new Element("Box B", id("column-b"));
+	public final Element boxA = new Element("Box A", By.id("column-a"));
+	public final Element boxB = new Element("Box B", By.id("column-b"));
 
 }

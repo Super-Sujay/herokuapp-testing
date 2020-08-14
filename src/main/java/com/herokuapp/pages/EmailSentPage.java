@@ -1,12 +1,11 @@
 package com.herokuapp.pages;
 
-import static org.openqa.selenium.By.id;
-
 import org.automation.base.BasePage;
 import org.automation.elements.Element;
+import org.openqa.selenium.By;
 
 public class EmailSentPage extends BasePage {
 
-	public Element emailNotification = new Element("Email Notification", id("content"));
+	public final Element emailNotification = new Element("Email Notification", By.id("content"));
 
 }

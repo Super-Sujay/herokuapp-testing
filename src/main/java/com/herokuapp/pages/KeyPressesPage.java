@@ -1,14 +1,13 @@
 package com.herokuapp.pages;
 
-import static org.openqa.selenium.By.id;
-
 import org.automation.base.BasePage;
 import org.automation.elements.Element;
 import org.automation.elements.TextBox;
+import org.openqa.selenium.By;
 
 public class KeyPressesPage extends BasePage {
 
-	public TextBox target = new TextBox("Target", id("target"));
-	public Element result = new Element("Result", id("result"));
+	public final TextBox target = new TextBox("Target", By.id("target"));
+	public final Element result = new Element("Result", By.id("result"));
 
 }

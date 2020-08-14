@@ -2,11 +2,11 @@ package com.herokuapp.pages;
 
 import org.automation.base.BasePage;
 import org.automation.elements.CheckBox;
-import static org.openqa.selenium.By.cssSelector;
+import org.openqa.selenium.By;
 
 public class CheckboxesPage extends BasePage {
 
-	public CheckBox checkbox1 = new CheckBox("Checkbox 1", cssSelector("input:nth-of-type(1)"));
-	public CheckBox checkbox2 = new CheckBox("Checkbox 2", cssSelector("input:nth-of-type(2)"));
+	public final CheckBox checkbox1 = new CheckBox("Checkbox 1", By.cssSelector("input:nth-of-type(1)"));
+	public final CheckBox checkbox2 = new CheckBox("Checkbox 2", By.cssSelector("input:nth-of-type(2)"));
 
 }

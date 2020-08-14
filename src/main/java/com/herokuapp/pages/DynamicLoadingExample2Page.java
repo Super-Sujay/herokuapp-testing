@@ -1,15 +1,13 @@
 package com.herokuapp.pages;
 
-import static org.openqa.selenium.By.id;
-import static org.openqa.selenium.By.tagName;
-
 import org.automation.base.BasePage;
 import org.automation.elements.Button;
 import org.automation.elements.Element;
+import org.openqa.selenium.By;
 
 public class DynamicLoadingExample2Page extends BasePage {
 
-	public Button start = new Button("Start", tagName("button"));
-	public Element finishText = new Element("Finish Text", id("finish"));
+	public final Button start = new Button("Start", By.tagName("button"));
+	public final Element finishText = new Element("Finish Text", By.id("finish"));
 
 }

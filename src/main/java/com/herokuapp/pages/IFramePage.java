@@ -1,17 +1,15 @@
 package com.herokuapp.pages;
 
-import static org.openqa.selenium.By.cssSelector;
-import static org.openqa.selenium.By.id;
-
 import org.automation.base.BasePage;
 import org.automation.elements.Button;
 import org.automation.elements.TextBox;
+import org.openqa.selenium.By;
 
 public class IFramePage extends BasePage {
 
-	public Button bold = new Button("Bold", cssSelector("div[aria-label='Bold']"));
-	public Button italic = new Button("Italic", cssSelector("div[aria-label='Italic']"));
-	public TextBox content = new TextBox("Content", id("tinymce"));
+	public final Button bold = new Button("Bold", By.cssSelector("div[aria-label='Bold']"));
+	public final Button italic = new Button("Italic", By.cssSelector("div[aria-label='Italic']"));
+	public final TextBox content = new TextBox("Content", By.id("tinymce"));
 
 	public void switchToMainFrame() {
 		switchToDefaultContent("Main Frame");

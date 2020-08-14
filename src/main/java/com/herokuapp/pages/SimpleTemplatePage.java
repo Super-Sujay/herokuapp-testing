@@ -1,29 +1,28 @@
 package com.herokuapp.pages;
 
 import static org.automation.config.DriverFactory.getDriver;
-import static org.openqa.selenium.By.cssSelector;
-import static org.openqa.selenium.By.tagName;
 
 import org.automation.base.BasePage;
 import org.automation.elements.Element;
 import org.automation.elements.Elements;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 
 public class SimpleTemplatePage extends BasePage {
 
-	public Elements paragraphs = new Elements("Paragraphs", tagName("my-paragraph"));
-	public Element firstParagraph = new Element("First Paragraph", cssSelector("my-paragraph > span"));
-	public Element secondParagraph = new Element("First Paragraph", cssSelector("my-paragraph > ul"));
+	public final Elements paragraphs = new Elements("Paragraphs", By.tagName("my-paragraph"));
+	public final Element firstParagraph = new Element("First Paragraph", By.cssSelector("my-paragraph > span"));
+	public final Element secondParagraph = new Element("First Paragraph", By.cssSelector("my-paragraph > ul"));
 
 	public String getFirstShadowText() {
 		WebElement shadow = expandRootElement(paragraphs.getWebElements().get(0));
-		return shadow.findElement(tagName("slot")).getText();
+		return shadow.findElement(By.tagName("slot")).getText();
 	}
 
 	public String getSecondShadowText() {
 		WebElement shadow = expandRootElement(paragraphs.getWebElements().get(1));
-		return shadow.findElement(tagName("slot")).getText();
+		return shadow.findElement(By.tagName("slot")).getText();
 	}
 
 	private WebElement expandRootElement(WebElement element) {

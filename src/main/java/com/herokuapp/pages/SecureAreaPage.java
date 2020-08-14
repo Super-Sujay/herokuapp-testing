@@ -1,15 +1,13 @@
 package com.herokuapp.pages;
 
-import static org.openqa.selenium.By.cssSelector;
-import static org.openqa.selenium.By.id;
-
 import org.automation.base.BasePage;
 import org.automation.elements.Button;
 import org.automation.elements.Element;
+import org.openqa.selenium.By;
 
 public class SecureAreaPage extends BasePage {
 
-	public Element message = new Element("Message", id("flash"));
-	public Button logout = new Button("Logout", cssSelector("a > i"));
+	public final Element message = new Element("Message", By.id("flash"));
+	public final Button logout = new Button("Logout", By.cssSelector("a > i"));
 
 }

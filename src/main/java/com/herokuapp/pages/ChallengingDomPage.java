@@ -1,12 +1,11 @@
 package com.herokuapp.pages;
 
-import static org.openqa.selenium.By.tagName;
-
 import org.automation.base.BasePage;
 import org.automation.elements.Table;
+import org.openqa.selenium.By;
 
 public class ChallengingDomPage extends BasePage {
 
-	public Table myTable = new Table("My table", tagName("table"));
+	public final Table myTable = new Table("My table", By.tagName("table"));
 
 }

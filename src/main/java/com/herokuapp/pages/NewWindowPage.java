@@ -1,14 +1,14 @@
 package com.herokuapp.pages;
 
-import static org.openqa.selenium.By.tagName;
 import static org.automation.config.DriverFactory.getDriver;
 
 import org.automation.base.BasePage;
 import org.automation.elements.Element;
+import org.openqa.selenium.By;
 
 public class NewWindowPage extends BasePage {
 
-	public Element pageHeading = new Element("Page Heading", tagName("h3"));
+	public final Element pageHeading = new Element("Page Heading", By.tagName("h3"));
 
 	public void closeWindow() {
 		getDriver().close();
