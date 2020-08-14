@@ -8,7 +8,7 @@ Application URL: http://the-internet.herokuapp.com
  - Apache Maven 3.6.2 or higher version
 
 ## Execution
- - Run the command `mvn clean verify` in your local system to start the execution of tests.
- - Run the command `mvn clean -Dthreads=2 verify` in your local system to start the execution of tests parallelly in 2 separate browser instances.
- - Run the command `mvn clean -DsuiteFile=TestSuite verify` in your local system to start the suite execution of the TestSuite.xml file present in the src/test/resources/suite folder.
- - Run the command `mvn clean -Dremote=true -DseleniumGridURL=http://192.168.1.3:4444/wd/hub verify` in your local system to start the execution of tests in the selenium grid provided in the http://192.168.1.3:4444/wd/hub URL.
+ - Run the command `mvn clean integration-test` in your local system to start the execution of tests.
+ - Run the command `mvn clean -Dthreads=2 integration-test` in your local system to start the execution of tests parallelly in 2 separate browser instances.
+ - Run the command `mvn clean -DsuiteFile=TestSuite integration-test` in your local system to start the suite execution of the TestSuite.xml file present in the src/test/resources/suite folder.
+ - Run the command `mvn clean -Dremote=true -DseleniumGridURL=http://192.168.1.3:4444/wd/hub integration-test` in your local system to start the execution of tests in the selenium grid provided in the http://192.168.1.3:4444/wd/hub URL.
