@@ -81,6 +81,26 @@
 			<class name="com.herokuapp.tests.ForgotPasswordExecution" />
 		</classes>
 	</test>
+	<test name="Frame Test">
+		<classes>
+			<class name="com.herokuapp.tests.FrameExecution" />
+		</classes>
+	</test>
+	<test name="Hovers Test">
+		<classes>
+			<class name="com.herokuapp.tests.HoversExecution" />
+		</classes>
+	</test>
+	<test name="Java Script Alerts Test">
+		<classes>
+			<class name="com.herokuapp.tests.JavaScriptAlertsExecution" />
+		</classes>
+	</test>
+	<test name="Key Presses Test">
+		<classes>
+			<class name="com.herokuapp.tests.KeyPressesExecution" />
+		</classes>
+	</test>
 	<test name="Login Test">
 		<classes>
 			<class name="com.herokuapp.tests.LoginExecution" />
