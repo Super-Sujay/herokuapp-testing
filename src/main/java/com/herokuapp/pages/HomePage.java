@@ -2,6 +2,7 @@ package com.herokuapp.pages;
 
 import org.automation.base.BasePage;
 import org.automation.elements.HyperLink;
+import org.automation.utilities.Configuration;
 import org.openqa.selenium.By;
 
 public class HomePage extends BasePage {
@@ -52,7 +53,7 @@ public class HomePage extends BasePage {
 	public final HyperLink wysiwygEditor = new HyperLink("WYSIWYG Editor", By.cssSelector("li:nth-child(44) > a"));
 
 	public HomePage() {
-		openUrl("http://the-internet.herokuapp.com/");
+		openUrl(Configuration.get("url"));
 	}
 
 }

@@ -5,6 +5,7 @@ import static org.testng.Assert.assertEquals;
 import java.util.Map;
 
 import org.automation.base.BaseTest;
+import org.automation.utilities.Configuration;
 import org.testng.annotations.Test;
 
 import com.herokuapp.pages.HomePage;
@@ -17,8 +18,8 @@ public class LoginExecution extends BaseTest {
 	public void testLogin1(Map<String, String> data) {
 		HomePage home = new HomePage();
 		LoginPage login = home.formAuthentication.click(LoginPage.class);
-		login.username.enterText(data.get("Username"));
-		login.password.enterText(data.get("Password"));
+		login.username.enterText(Configuration.get("username"));
+		login.password.enterText(Configuration.get("password"));
 		SecureAreaPage secureArea = login.loginButton.click(SecureAreaPage.class);
 		String message = secureArea.message.getText().split("\\n")[0];
 		assertEquals(message, data.get("Assertion1"), "Login failed");
