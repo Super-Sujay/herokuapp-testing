@@ -12,11 +12,11 @@ public class IFramePage extends BasePage {
 	public final TextBox content = new TextBox("Content", By.id("tinymce"));
 
 	public void switchToMainFrame() {
-		switchToDefaultContent("Main Frame");
+		super.switchToDefaultContent("Main Frame");
 	}
 
 	public void switchToContentFrame() {
-		switchToFrame("Content", "mce_0_ifr");
+		super.switchToFrame("Content", "mce_0_ifr");
 	}
 
 }

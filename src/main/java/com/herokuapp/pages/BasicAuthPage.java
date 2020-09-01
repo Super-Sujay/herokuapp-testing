@@ -11,7 +11,7 @@ public class BasicAuthPage extends BasePage {
 	public final Element message = new Element("Message", By.cssSelector("div > p"));
 
 	public BasicAuthPage(String username, String password) {
-		openUrl("http://" + username + ":" + password + "@the-internet.herokuapp.com/basic_auth");
+		super.openUrl("http://" + username + ":" + password + "@the-internet.herokuapp.com/basic_auth");
 	}
 
 }

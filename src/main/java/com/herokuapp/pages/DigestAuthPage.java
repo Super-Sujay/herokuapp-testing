@@ -9,7 +9,7 @@ public class DigestAuthPage extends BasePage {
 	public final Element message = new Element("Message", By.cssSelector("div > p"));
 
 	public DigestAuthPage(String username, String password) {
-		openUrl("http://" + username + ":" + password + "@the-internet.herokuapp.com/digest_auth");
+		super.openUrl("http://" + username + ":" + password + "@the-internet.herokuapp.com/digest_auth");
 	}
 
 }

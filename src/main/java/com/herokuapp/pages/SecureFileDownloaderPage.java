@@ -11,7 +11,7 @@ public class SecureFileDownloaderPage extends BasePage {
 	public final HyperLink fileLink1 = new HyperLink("File Link 1", By.cssSelector(".example > a:nth-of-type(1)"));
 
 	public SecureFileDownloaderPage(String username, String password) {
-		openUrl("http://" + username + ":" + password + "@the-internet.herokuapp.com/download_secure");
+		super.openUrl("http://" + username + ":" + password + "@the-internet.herokuapp.com/download_secure");
 	}
 
 }

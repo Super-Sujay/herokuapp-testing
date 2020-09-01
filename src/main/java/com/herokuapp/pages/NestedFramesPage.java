@@ -14,19 +14,19 @@ public class NestedFramesPage extends BasePage {
 	public final Element frameText = new Element("Frame Text", By.tagName("body"));
 
 	public void switchToTopFrame() {
-		switchToFrame(topFrame);
+		super.switchToFrame(topFrame);
 	}
 
 	public void switchToTopLeftFrame() {
-		switchToFrame(topLeftFrame);
+		super.switchToFrame(topLeftFrame);
 	}
 
 	public void switchToBottomFrame() {
-		switchToFrame("Bottom Frame", "frame-bottom");
+		super.switchToFrame("Bottom Frame", "frame-bottom");
 	}
 
 	public void switchToMainFrame() {
-		switchToDefaultContent("Main Frame");
+		super.switchToDefaultContent("Main Frame");
 	}
 
 }

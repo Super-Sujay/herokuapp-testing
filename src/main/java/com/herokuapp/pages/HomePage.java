@@ -53,7 +53,7 @@ public class HomePage extends BasePage {
 	public final HyperLink wysiwygEditor = new HyperLink("WYSIWYG Editor", By.cssSelector("li:nth-child(44) > a"));
 
 	public HomePage() {
-		openUrl(Configuration.get("url"));
+		super.openUrl(Configuration.get("url"));
 	}
 
 }

@@ -11,11 +11,11 @@ public class OpeningNewWindowPage extends BasePage {
 	public final HyperLink clickHere = new HyperLink("Click here", By.cssSelector("div.example > a"));
 
 	public void switchToNewWindow() {
-		switchToWindow("New Window");
+		super.switchToWindow("New Window");
 	}
 
 	public void switchToThisWindow() {
-		switchToWindowContainingTitle("Opening a new window", "The Internet");
+		super.switchToWindowContainingTitle("Opening a new window", "The Internet");
 	}
 
 }

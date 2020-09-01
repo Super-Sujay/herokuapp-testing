@@ -16,12 +16,12 @@ public class SimpleTemplatePage extends BasePage {
 	public final Element secondParagraph = new Element("First Paragraph", By.cssSelector("my-paragraph > ul"));
 
 	public String getFirstShadowText() {
-		WebElement shadow = expandRootElement(paragraphs.getWebElements().get(0));
+		WebElement shadow = this.expandRootElement(paragraphs.getWebElements().get(0));
 		return shadow.findElement(By.tagName("slot")).getText();
 	}
 
 	public String getSecondShadowText() {
-		WebElement shadow = expandRootElement(paragraphs.getWebElements().get(1));
+		WebElement shadow = this.expandRootElement(paragraphs.getWebElements().get(1));
 		return shadow.findElement(By.tagName("slot")).getText();
 	}
 
