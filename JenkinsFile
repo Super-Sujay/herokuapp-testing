@@ -7,7 +7,7 @@ pipeline {
 	stages {
 		stage ('Test') {
 			steps {
-				bat 'mvn clean -Dthreads=2 verify'
+				bat "mvn clean -Dthreads=${threads} -Dremote=${remote} -DseleniumGridURL=${gridURL} verify"
 				junit '**/target/failsafe-reports/TEST-*.xml'
 			}
 		}
