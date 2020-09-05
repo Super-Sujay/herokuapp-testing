@@ -8,13 +8,13 @@ pipeline {
 		stage ('Test') {
 			steps {
 				bat "mvn clean -Dthreads=${threads} -Dremote=${remote} -DseleniumGridURL=${gridURL} verify"
-				junit '**/target/failsafe-reports/TEST-*.xml'
 			}
 		}
-		stage ('Archive') {
-			steps {
-				archiveArtifacts artifacts: 'target/selenium-logs/*.log', onlyIfSuccessful: false, fingerprint: true
-			}
+	}
+	post {
+		always {
+			junit '**/target/failsafe-reports/TEST-*.xml'
+			archiveArtifacts artifacts: 'target/selenium-logs/*.log', onlyIfSuccessful: false, fingerprint: true
 		}
 	}
 }
