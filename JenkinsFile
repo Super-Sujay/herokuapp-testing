@@ -15,7 +15,12 @@ pipeline {
 		always {
 			junit '**/target/failsafe-reports/TEST-*.xml'
 			archiveArtifacts artifacts: '**/target/selenium-logs/*.log', onlyIfSuccessful: false, fingerprint: true
-			emailext attachmentsPattern: '**/target/extent-reports/*.html', body: "Check console output at ${BUILD_URL} to view the results.", subject: "${JOB_NAME} - ${BUILD_DISPLAY_NAME}", to: 'insvsawant@gmail.com'
+		}
+		success {
+			emailext attachmentsPattern: '**/target/extent-reports/*.html', body: "Status: PASSED.<br>Check console output at ${BUILD_URL} to view the results.", subject: "${JOB_NAME} - ${BUILD_DISPLAY_NAME}" - PASSED, to: 'insvsawant@gmail.com'
+		}
+		failure {
+			emailext attachmentsPattern: '**/target/extent-reports/*.html', body: "Status: FAILED.<br>Check console output at ${BUILD_URL} to view the results.", subject: "${JOB_NAME} - ${BUILD_DISPLAY_NAME}" - FAILED, to: 'insvsawant@gmail.com'
 		}
 	}
 }
