@@ -15,7 +15,7 @@ pipeline {
 		always {
 			junit '**/target/failsafe-reports/TEST-*.xml'
 			archiveArtifacts artifacts: 'target/selenium-logs/*.log', onlyIfSuccessful: false, fingerprint: true
-			emailext attachLog: true, attachmentsPattern: 'target/selenium-logs/*.log', body: "Build ${JOB_NAME} - ${BUILD_DISPLAY_NAME}: Check console output at ${BUILD_URL} to view the results.", subject: "${JOB_NAME} - ${BUILD_NUMBER}!", to: 'insvsawant@gmail.com'
+			emailext body: "Build ${JOB_NAME} - ${BUILD_DISPLAY_NAME}: Check console output at ${BUILD_URL} to view the results.", subject: "${JOB_NAME} - ${BUILD_NUMBER}!", to: 'insvsawant@gmail.com'
 		}
 	}
 }
