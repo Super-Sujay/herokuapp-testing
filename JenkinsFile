@@ -16,6 +16,7 @@ pipeline {
 			junit 'target/failsafe-reports/TEST-*.xml'
 			archiveArtifacts artifacts: 'target/selenium-logs/*.log', onlyIfSuccessful: false, fingerprint: true
 			publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/extent-reports', reportFiles: 'Extent Report_*.html', reportName: 'Extent Report', reportTitles: 'Jenkins Extent Report'])
+			publishHTML([allowMissing: false, alwaysLinkToLastBuild: false, keepAll: false, reportDir: 'target/failsafe-reports', reportFiles: 'index.html', reportName: 'TestNG Report', reportTitles: 'Jenkins TestNG Report'])
 		}
 		success {
 			emailext attachmentsPattern: 'target/extent-reports/*.html', body: "Status: PASSED.<br>Check console output at ${BUILD_URL} to view the results.", subject: "${JOB_NAME} - ${BUILD_DISPLAY_NAME} - PASSED", to: 'insvsawant@gmail.com'
