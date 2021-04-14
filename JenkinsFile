@@ -1,5 +1,5 @@
 pipeline {
-	agent { label 'x64' }
+	agent { any }
 	tools {
 		maven 'Maven 3.6.2'
 		jdk 'Java 8'
