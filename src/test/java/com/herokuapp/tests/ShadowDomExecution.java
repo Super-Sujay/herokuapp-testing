@@ -12,7 +12,7 @@ import com.herokuapp.pages.SimpleTemplatePage;
 
 public class ShadowDomExecution extends BaseTest {
 
-	@Test(dataProvider = "ExcelDataProvider")
+	@Test(dataProvider = "ExcelDataProvider", groups = "Ignore")
 	public void testShadowDom(Map<String, String> data) {
 		HomePage home = new HomePage();
 		SimpleTemplatePage simpleTemplate = home.shadowDom.click(SimpleTemplatePage.class);

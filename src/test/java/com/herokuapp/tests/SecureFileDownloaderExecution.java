@@ -1,6 +1,5 @@
 package com.herokuapp.tests;
 
-import static java.lang.Integer.parseInt;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertTrue;
 
@@ -17,7 +16,7 @@ public class SecureFileDownloaderExecution extends BaseTest {
 	public void testSecureFileDownloader1(Map<String, String> data) {
 		SecureFileDownloaderPage secureFileDownloader = new SecureFileDownloaderPage(data.get("Username"), data.get("Password"));
 		assertTrue(secureFileDownloader.pageHeader.isVisible(), "Unable to login with correct credentials");
-		assertEquals(secureFileDownloader.fileLink1.httpStatus(), parseInt(data.get("Assertion1")), "Incorrect status");
+		assertEquals(secureFileDownloader.fileLink1.httpStatus(), Integer.parseInt(data.get("Assertion1")), "Incorrect status");
 	}
 
 	@Test(dataProvider = "ExcelDataProvider")

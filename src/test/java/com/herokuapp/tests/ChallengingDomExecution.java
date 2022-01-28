@@ -20,11 +20,13 @@ public class ChallengingDomExecution extends BaseTest {
 		ChallengingDomPage challengingDom = home.challengingDom.click(ChallengingDomPage.class);
 		List<String> tableHeaders = challengingDom.myTable.getTableHeaders();
 		List<String> tableData = challengingDom.myTable.getTableData();
-		for (String header : tableHeaders)
-			System.out.print(header + "\t\t");
+		for (String header : tableHeaders) {
+			System.out.print(header + "\t\t");			
+		}
 		for (int i = 0; i < tableData.size(); i++) {
-			if (i % tableHeaders.size() == 0)
-				System.out.println();
+			if (i % tableHeaders.size() == 0) {
+				System.out.println();				
+			}
 			System.out.print(tableData.get(i) + "\t");
 		}
 		System.out.println();

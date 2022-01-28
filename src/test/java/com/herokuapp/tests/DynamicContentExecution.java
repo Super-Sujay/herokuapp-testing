@@ -13,10 +13,14 @@ public class DynamicContentExecution extends BaseTest {
 		HomePage home = new HomePage();
 		DynamicContentPage dynamicContent = home.dynamicContent.click(DynamicContentPage.class);
 		String[] allText = dynamicContent.dynamicText.getTextFromAllElements();
-		for (String text : allText) System.out.println(text);
+		for (String text : allText) {
+			System.out.println(text);
+		}
 		dynamicContent = dynamicContent.clickHere.click(DynamicContentPage.class);
 		allText = dynamicContent.dynamicText.getTextFromAllElements();
-		for (String text : allText) System.out.println(text);
+		for (String text : allText) {
+			System.out.println(text);
+		}
 	}
 
 }

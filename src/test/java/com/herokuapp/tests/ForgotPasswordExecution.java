@@ -13,7 +13,7 @@ import com.herokuapp.pages.HomePage;
 
 public class ForgotPasswordExecution extends BaseTest {
 
-	@Test(dataProvider = "ExcelDataProvider")
+	@Test(dataProvider = "ExcelDataProvider", groups = "Ignore")
 	public void testForgotPassword(Map<String, String> data) {
 		HomePage home = new HomePage();
 		ForgotPasswordPage forgotPassword = home.forgotPassword.click(ForgotPasswordPage.class);

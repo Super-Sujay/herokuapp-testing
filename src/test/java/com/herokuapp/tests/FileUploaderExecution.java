@@ -7,6 +7,9 @@ import static org.testng.Assert.assertEquals;
 import java.util.Map;
 
 import org.automation.base.BaseTest;
+import org.automation.config.DriverFactory;
+import org.openqa.selenium.remote.LocalFileDetector;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 
 import com.herokuapp.pages.FileUploadedPage;
@@ -20,6 +23,9 @@ public class FileUploaderExecution extends BaseTest {
 		HomePage home = new HomePage();
 		FileUploaderPage fileUploader = home.fileUpload.click(FileUploaderPage.class);
 		String filePath = getProperty("user.dir") + separator + "src" + separator + "test" + separator + "resources" + separator + data.get("File Name");
+		if (Boolean.getBoolean("remoteDriver")) {
+			((RemoteWebDriver) DriverFactory.getDriver()).setFileDetector(new LocalFileDetector());			
+		}
 		fileUploader.choseFile.enterText(filePath);
 		FileUploadedPage fileUploaded = fileUploader.upload.click(FileUploadedPage.class);
 		assertEquals(fileUploaded.pageHeader.getText(), data.get("Assertion1"), "File did not upload");

@@ -1,139 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Heroku App Suite">
-	<test name="Add Remove Elements Test">
-		<classes>
-			<class name="com.herokuapp.tests.AddRemoveElementsExecution" />
-		</classes>
-	</test>
-	<test name="Basic Authentication Test">
-		<classes>
-			<class name="com.herokuapp.tests.BasicAuthExecution" />
-		</classes>
-	</test>
-	<test name="Broken Images Test">
-		<classes>
-			<class name="com.herokuapp.tests.BrokenImagesExecution" />
-		</classes>
-	</test>
-	<test name="Challenging DOM Test">
-		<classes>
-			<class name="com.herokuapp.tests.ChallengingDomExecution" />
-		</classes>
-	</test>
-	<test name="Checkboxes Test">
-		<classes>
-			<class name="com.herokuapp.tests.CheckboxesExecution" />
-		</classes>
-	</test>
-	<test name="Digest Authentication Test">
-		<classes>
-			<class name="com.herokuapp.tests.DigestAuthExecution" />
-		</classes>
-	</test>
-	<test name="Disappearing Elements Test">
-		<classes>
-			<class name="com.herokuapp.tests.DisappearingElementsExecution" />
-		</classes>
-	</test>
-	<test name="Drag drop Test">
-		<classes>
-			<class name="com.herokuapp.tests.DragDropExecution" />
-		</classes>
-	</test>
-	<test name="Dropdown List Test">
-		<classes>
-			<class name="com.herokuapp.tests.DropdownListExecution" />
-		</classes>
-	</test>
-	<test name="Dynamic Content Test">
-		<classes>
-			<class name="com.herokuapp.tests.DynamicContentExecution" />
-		</classes>
-	</test>
-	<test name="Dynamic Controls Test">
-		<classes>
-			<class name="com.herokuapp.tests.DynamicControlsExecution" />
-		</classes>
-	</test>
-	<test name="Dynamic Loading Test">
-		<classes>
-			<class name="com.herokuapp.tests.DynamicLoadingExecution" />
-		</classes>
-	</test>
-	<test name="Entry Advertisement Test">
-		<classes>
-			<class name="com.herokuapp.tests.EntryAdExecution" />
-		</classes>
-	</test>
-	<test name="File Downloader Test">
-		<classes>
-			<class name="com.herokuapp.tests.FileDownloaderExecution" />
-		</classes>
-	</test>
-	<test name="File Uploader Test">
-		<classes>
-			<class name="com.herokuapp.tests.FileUploaderExecution" />
-		</classes>
-	</test>
-	<test name="Forgot Password Test">
-		<classes>
-			<class name="com.herokuapp.tests.ForgotPasswordExecution" />
-		</classes>
-	</test>
-	<test name="Frame Test">
-		<classes>
-			<class name="com.herokuapp.tests.FrameExecution" />
-		</classes>
-	</test>
-	<test name="Hovers Test">
-		<classes>
-			<class name="com.herokuapp.tests.HoversExecution" />
-		</classes>
-	</test>
-	<test name="Java Script Alerts Test">
-		<classes>
-			<class name="com.herokuapp.tests.JavaScriptAlertsExecution" />
-		</classes>
-	</test>
-	<test name="Key Presses Test">
-		<classes>
-			<class name="com.herokuapp.tests.KeyPressesExecution" />
-		</classes>
-	</test>
-	<test name="Login Test">
-		<classes>
-			<class name="com.herokuapp.tests.LoginExecution" />
-		</classes>
-	</test>
-	<test name="Multiple Windows Test">
-		<classes>
-			<class name="com.herokuapp.tests.MultipleWindowsExecution" />
-		</classes>
-	</test>
-	<test name="Notification Message Test">
-		<classes>
-			<class name="com.herokuapp.tests.NotificationMessageExecution" />
-		</classes>
-	</test>
-	<test name="Redirect Link Test">
-		<classes>
-			<class name="com.herokuapp.tests.RedirectLinkExecution" />
-		</classes>
-	</test>
-	<test name="Secure File Downloader Test">
-		<classes>
-			<class name="com.herokuapp.tests.SecureFileDownloaderExecution" />
-		</classes>
-	</test>
-	<test name="Shadow Dom Test">
-		<classes>
-			<class name="com.herokuapp.tests.ShadowDomExecution" />
-		</classes>
-	</test>
-	<test name="Sortable Data Tables Test">
-		<classes>
-			<class name="com.herokuapp.tests.SortableDataTablesExecution" />
-		</classes>
+	<groups>
+		<run>
+			<exclude name="Ignore" />
+		</run>
+	</groups>
+	<test name="Heroku App Test">
+		<packages>
+			<package name="com.herokuapp.tests" />
+		</packages>
 	</test>
 </suite>

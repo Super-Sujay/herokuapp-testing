@@ -15,12 +15,12 @@
 		<!-- Configurable variables -->
 		<suiteFile>TestExecution</suiteFile>
 		<threads>1</threads>
-		<browser>chrome</browser>
+		<browser>Chrome</browser>
 		<overwrite.binaries>false</overwrite.binaries>
 		<remote>false</remote>
-		<seleniumGridURL></seleniumGridURL>
-		<platform></platform>
-		<browserVersion></browserVersion>
+		<seleniumGridURL>https://hub-cloud.browserstack.com/wd/hub</seleniumGridURL>
+		<platform>Windows</platform>
+		<browserVersion>96</browserVersion>
 		<proxyEnabled>false</proxyEnabled>
 		<proxyHost></proxyHost>
 		<proxyPort></proxyPort>
@@ -43,7 +43,7 @@
 					<suiteXmlFiles>
 						<suiteXmlFile>src/test/resources/suitefiles/${suiteFile}.xml</suiteXmlFile>
 					</suiteXmlFiles>
-					<parallel>tests</parallel>
+					<parallel>methods</parallel>
 					<threadCount>${threads}</threadCount>
 					<systemProperties>
 						<browser>${browser}</browser>
